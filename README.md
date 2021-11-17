@@ -1,2 +1,1 @@
-# vue2-workshop
-Vue2 Workshop
+# Vue 2 Workshop

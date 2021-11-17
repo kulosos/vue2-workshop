@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="start_frontend:mock" type="js.build_tools.npm">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" />
+    <scripts>
+      <script value="serve:mock" />
+    </scripts>
+    <node-interpreter value="project" />
+    <envs>
+      <env name="MOCKED" value="true" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>
