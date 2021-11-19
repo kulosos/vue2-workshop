@@ -1,0 +1,127 @@
+/* Page */
+$max-page-width: 1150px;
+$max-nav-bar-width: 1150px;
+$max-footer-width: 1024px;
+$max-imprint-width: 1024px;
+
+/* Navigation */
+$nav-bar-height-init: 118px;
+$nav-bar-height: 70px;
+
+/* Font Sizes */
+$font-size-text: 14px;
+$font-size-menu-items: 16px;
+$font-size-nav-logo: 36px;
+$font-size-footer-logo: 18px;
+$font-size-footer: 12px;
+$font-size-footer-bottom: 12px;
+$font-size-nav-logo-smallscreen: 28px;
+$font-size-nav-logo-mobile: 20px;
+$font-size-input: 18px;
+$font-size-input-label: 18px;
+$font-size-input-label-active: 12px;
+$font-size-teaser-headline: 24px;
+$font-size-teaser-headline-mobile: 24px;
+$font-size-teaser-text: 18px;
+$font-size-teaser-text-mobile: 16px;
+
+/* Font Weights */
+$font-weight-thin: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 800;
+$font-weight-black: 900;
+
+/* Headlines & Texts */
+h1 {
+  font-size: 34px;
+  font-weight: $font-weight-black;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: $font-weight-bold;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+p, span {
+  hyphens: auto;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 575px) {
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+
+  h6 {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-device-width: 374px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+
+  h6 {
+    font-size: 12px;
+  }
+}
+
+/* Borders */
+$border-radius-default: 1px;
+
+/* Outline (Accessibility) */
+$outline_default: 1px solid $ws-blue-mid;
+
+/* duration */
+$duration_default: 200ms;
+$animation_default: linear;

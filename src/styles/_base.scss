@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,600,700,800,900');
+@import './_colors';
+@import './_variables';
+@import './_spaces';
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  // background-color: $bg_light;
+  font-family: 'Muli', 'Avenier', Helvetica, sans-serif;
+  font-size: $font-size-text;
+  font-weight: $font-weight-normal;
+  color: $font-color;
+}
+
+a:link,
+a[role=button] {
+  cursor: pointer;
+}

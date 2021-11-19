@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <HelloWorld></HelloWorld>
+    <div class="home__header">App Header</div>
+    <div class="home__note-list">Note List</div>
+    <div class="home__note-detail">Note Detail</div>
   </div>
 </template>
 
@@ -16,3 +18,25 @@ import HelloWorld from "@/components/HelloWorld.vue";
 export default class Home extends Vue {
 }
 </script>
+
+<style lang="scss" scoped>
+@import '/src/styles/colors';
+
+
+.home {
+  background-color: $ws-blue;
+  display: flex;
+  flex-direction: column;
+
+  &__note-list {
+
+  }
+
+  &__note-detail {
+
+  }
+
+}
+
+</style>
+

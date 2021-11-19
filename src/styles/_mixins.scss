@@ -1,0 +1,152 @@
+@mixin box-shadow-soft {
+    box-shadow: 0px 3px 15px 0 rgba(0, 0, 0, 0.075);
+}
+
+@mixin box-shadow {
+    box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.175);
+}
+
+@mixin box-shadow-inset {
+    box-shadow: inset 0px 5px 15px 0px rgba(0, 0, 0, 0.15);
+}
+
+@mixin transition-default {
+    transition: all .2s linear;
+}
+
+@mixin box-shadow-transition() {
+    transition: transform 0.3s, box-shadow 0.3s;
+    transition-duration: 0.3s, 0.3s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, 0s;
+}
+
+@mixin color-line-transition() {
+    transition: transform 0.3s, background-color 0.3s background-position 0.3s;
+    transition-duration: 0.3s, 0.3s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, 0s;
+}
+
+@mixin main-banner-gradient() {
+    transition: 0.5s;
+    background-size: 200% auto;
+    background-image: linear-gradient(45deg, $kl-blue -10%, $kl-blue-mid 35%, $kl-blue-light 100%);
+}
+
+@mixin color-line-gradient() {
+    transition: 0.5s;
+    background-size: 100% auto;
+    background-image: linear-gradient(to right, $kl-blue 0%, $kl-blue-mid 50%, $kl-blue-light 100%, $kl-blue-mid 150%, $kl-blue 200%);
+}
+
+@mixin color-line-gradient-hover() {
+    background-image: linear-gradient(to right, $kl-blue-light 0%, $kl-blue-mid 50%, $kl-blue-light 100%, $kl-blue-mid 150%, $kl-blue-light 200%);
+    background-size: 200% auto;
+    animation-name: gradientAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+@mixin color-navigation-bar() {
+    background-image: linear-gradient(to right, #2a6cdb 0%, #0090e4 100%, #2a6cdb 200%);
+    @include box-shadow();
+}
+
+@mixin navbar-transition() {
+    transition: all .5s ease;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 100% 0%
+    }
+    50% {
+        background-position: 200% 0%
+    }
+    100% {
+        background-position: 100% 0%
+    }
+}
+
+@mixin inputErrorMessage() {
+    &__error-message {
+        color: $kl-error-default;
+        font-size: $font-size-text;
+        line-height: 1.25;
+        padding: $spaceXS 0 0 $spaceS;
+    }
+    &__error-bounce-enter-active,
+    &__error-bounce-leave-active {
+        max-height: 100px;
+        transition: opacity $duration_default $animation_default, max-height $duration_default $animation_default;
+    }
+    &__error-bounce-enter,
+    &__error-bounce-leave-to {
+        max-height: 0;
+        opacity: 0;
+    }
+    @keyframes fadeInFromNone {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: .5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin color-line-gradient-error() {
+    background-color: $kl-error-default;
+    background-size: 200% auto;
+    animation-name: gradientAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+@mixin color-line-gradient-error-animated() {
+    background-image: linear-gradient(to right, $kl-error5 0%, $kl-error2 50%, $kl-error5 100%, $kl-error4 150%, $kl-error5 200%);
+    background-size: 200% auto;
+    animation-name: gradientAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+@mixin teaser-headline() {
+    font-size: $font-size-teaser-headline;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media only screen and (max-device-width: 575px) {
+        font-size: $font-size-teaser-headline-mobile;
+    }
+}
+
+@mixin teaser-text() {
+    font-size: $font-size-teaser-text;
+    @media only screen and (max-device-width: 575px) {
+        font-size: $font-size-teaser-text-mobile;
+    }
+}
+
+@mixin clearfix() {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@mixin set-border($thickness, $color, $radius) {
+    border: $thickness solid $color;
+    border-radius: $radius;
+}
+
+@mixin dev-border {
+    //border: .1px deeppink solid;
+}

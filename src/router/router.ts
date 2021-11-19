@@ -11,6 +11,11 @@ const routes: Array<RouteConfig> = [
         name: AppRouteNames.Home,
         component: Home,
     },
+    {
+        path: '/:note',
+        name: AppRouteNames.Note,
+        component: Home,
+    },
 ]
 
 const router = new VueRouter({

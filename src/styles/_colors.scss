@@ -1,1 +1,47 @@
-$codieGreen: #ff0000;
+// Colors
+$ws-blue-light: rgba(0,212,255,1);
+$ws-blue-mid: #1C7CE0;
+$ws-blue-mid-25: rgba(28, 124, 224, 0.5);
+$ws-blue-mid-50: rgba(28, 124, 224, 0.5);
+$ws-blue-mid-75: rgba(28, 124, 224, 0.75);
+$ws-blue: #090979;
+$ws-blue-dark: #150051;
+
+$ws-caribbeanblue: rgba(49,207,171,1.0);
+$ws-caribbeanblue-50: rgba(49,207,171,0.5);
+$ws-caribbeanblue-dark: #50e3c2;
+
+$ws-oceanblue-mid: #1595b6;
+$ws-oceanblue-dark: rgba(31,38,103,1.0);
+$ws-oceanblue-dark-90: rgba(31,38,103,0.9);
+
+$ws-purple-mid: #5e18af;
+$ws-purple-dark: rgba(31,38,103,1.0);
+$ws-purple-dark-90: rgba(31,38,103,0.9);
+
+$ws-midnightblue-dark: rgba(2,0,36,1);
+
+$ws-white: white;
+
+// Backgrounds
+$bg_light: #fff;
+$bg_light-20: rgba(255, 255, 255, 0.20);
+$bg_light-50: rgba(255, 255, 255, 0.50);
+$bg_lightgray: #F2F2F2;
+$bg_dark: rgba(200, 200, 200, 1);
+
+// Fonts
+$font-color: #2c3e50;
+
+// ws-Cards
+$ws-cards_bg_light: white;
+
+// Errors
+$ws-error-default: #FC2D66;
+$ws-error-line: $ws-error-default;
+
+$ws-error1: #F2732C;
+$ws-error2: #FC592D;
+$ws-error3: #E64135;
+$ws-error4: #FC2D66;
+$ws-error5: #F22CC5;
