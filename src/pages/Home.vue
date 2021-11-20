@@ -1,42 +1,31 @@
 <template>
   <div class="home">
-    <div class="home__header">App Header</div>
-    <div class="home__note-list">Note List</div>
-    <div class="home__note-detail">Note Detail</div>
+    <h1>Page Home.vue</h1>
+    <a href="#">This is a link</a>
   </div>
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
+import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "@/components/HelloWorld.vue";
 
 @Component({
   components: {
     HelloWorld,
-  }
+  },
 })
 export default class Home extends Vue {
+  public mounted(): void {
+    console.log("HomePage mounted");
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '/src/styles/colors';
-
-
+@import '../styles/colors';
 .home {
-  background-color: $ws-blue;
   display: flex;
   flex-direction: column;
-
-  &__note-list {
-
-  }
-
-  &__note-detail {
-
-  }
-
 }
-
 </style>
 
