@@ -1,8 +1,10 @@
 <template>
   <div class="app">
-    <header class="app__header">App Header</header>
+    <Header class="app__header">
+    </Header>
     <main class="app__main">
-      <div class="app__note-list">Note List</div>
+      <div class="app__note-list">Note List 
+      </div>
       <div class="app__note-detail">
         <router-view></router-view>
       </div>
@@ -14,16 +16,19 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import Header from "./components/Header.vue";
 
 @Component({
-  components: {},
+  components: {
+    Header,
+  },
 })
 export default class App extends Vue {}
 </script>
 
 <style scoped lang="scss">
-@import "../src/styles/spaces";
-@import "../src/styles/colors";
+@import '../src/styles/spaces';
+@import '../src/styles/colors';
 
 $headerHeight: 40px;
 $footerHeight: 24px;
@@ -34,11 +39,8 @@ $footerHeight: 24px;
 }
 
 .app {
-  align-items: center;
-  align-content: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   height: 100%;
   min-height: 100%;
 
