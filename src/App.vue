@@ -1,26 +1,28 @@
 <template>
   <div class="app">
-    <Header class="app__header">
-    </Header>
+    <Header class="app__header"></Header>
     <main class="app__main">
-      <div class="app__note-list">Note List 
-      </div>
-      <div class="app__note-detail">
-        <router-view></router-view>
-      </div>
+      <NoteList class="app__note-list"></NoteList>
+      <NoteDetail class="app__note-detail"></NoteDetail>
     </main>
-    <footer class="app__footer">Footer</footer>
+    <Footer class="app__footer"></Footer>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import Footer from "./components/Footer.vue";
 import Header from "./components/Header.vue";
+import NoteDetail from "./components/NoteDetail.vue";
+import NoteList from "./components/NoteList.vue";
 
 @Component({
   components: {
     Header,
+    NoteList,
+    NoteDetail,
+    Footer
   },
 })
 export default class App extends Vue {}
@@ -30,7 +32,7 @@ export default class App extends Vue {}
 @import '../src/styles/spaces';
 @import '../src/styles/colors';
 
-$headerHeight: 40px;
+$headerHeight: 30px;
 $footerHeight: 24px;
 
 @mixin boxContentLayout {
@@ -46,9 +48,6 @@ $footerHeight: 24px;
 
   &__header {
     @include boxContentLayout;
-    background-color: $ws-midnightblue-dark;
-    align-items: center;
-    display: flex;
     height: $headerHeight;
   }
 
@@ -61,7 +60,6 @@ $footerHeight: 24px;
 
   &__note-list {
     @include boxContentLayout;
-    border-right: 1px $bg_lightgray solid;
     display: flex;
     max-width: 350px;
     min-width: 200px;
@@ -78,7 +76,6 @@ $footerHeight: 24px;
     @include boxContentLayout;
     padding-top: $spaceXXS;
     padding-bottom: $spaceXXS;
-    background: gray;
     display: flex;
     align-items: center;
     height: $footerHeight;
