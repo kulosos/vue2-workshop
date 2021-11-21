@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    Home / Note Content
+    home
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default class Home extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import '../../src/styles/spaces';
+@import "../../src/styles/spaces";
 
 .home {
   display: flex;

@@ -1,7 +1,8 @@
-import Vue from 'vue'
-import VueRouter, {RouteConfig} from 'vue-router'
-import {AppRouteNames} from "@/models/AppRouteNames";
+import NoteDetail from "@/components/NoteDetail.vue";
+import { AppRouteNames } from "@/models/AppRouteNames";
 import Home from "@/pages/Home.vue";
+import Vue from 'vue';
+import VueRouter, { RouteConfig } from 'vue-router';
 
 Vue.use(VueRouter)
 
@@ -12,9 +13,9 @@ const routes: Array<RouteConfig> = [
         component: Home,
     },
     {
-        path: '/:note',
+        path: '/:noteId',
         name: AppRouteNames.Note,
-        component: Home,
+        component: NoteDetail,
     },
 ]
 
