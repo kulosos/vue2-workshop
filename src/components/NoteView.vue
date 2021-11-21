@@ -10,9 +10,10 @@
 </template>
 
 <script lang="ts">
+import { AppRouteNames } from "@/models/AppRouteNames";
 import { Note } from "@/models/Note";
 import { NotesService } from "@/services/NotesService";
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 import NoteDetail from "./NoteDetail.vue";
 import NoteList from "./NoteList.vue";
 
@@ -34,19 +35,26 @@ export default class NoteView extends Vue {
     /* const amount = Number(this.$route.params.noteId); */
     NotesService.getNotes()
       .then((result: Note[]) => {
-        console.log("res -> ", result);
         this.notes = result;
+        this.loadNoteFromRoute();
       })
       .catch(() => {
         console.log("error catched while retrieving notes data");
-      })
-      .finally(() => {
-        console.log("finally");
       });
+  }
+
+  @Watch("$route", { immediate: true })
+  public loadNoteFromRoute(): void {
+    const noteId = this.$route.params.noteId;
+    if (noteId) {
+      const foundNote = this.notes.find((note) => note.id === noteId);
+      this.selectedNote = foundNote ? foundNote : this.selectedNote;
+    }
   }
 
   public setSelectedNote(note: Note): void {
     this.selectedNote = note;
+    this.$router.push({ path: `/${AppRouteNames.Note}/${note.id}` });
   }
 }
 </script>
