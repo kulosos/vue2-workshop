@@ -5,6 +5,7 @@
       :key="note.id"
       class="note-list__item"
       type="button"
+      @click="emitSelectedNote(note)"
     >
       <i class="far fa-file note-list__item-icon"></i>
       <div class="note-list__item-label">
@@ -30,6 +31,10 @@ export default class NoteList extends Vue {
 
   public getFormattedDate(timestamp: string): string {
     return dateFnsFormat(new Date(timestamp), "dd.MM.yyyy HH:ss");
+  }
+
+  public emitSelectedNote(note: Note): void {
+    this.$emit('selected-note', note);
   }
 }
 </script>
