@@ -12,7 +12,6 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.17.3",
-    "roboto-fontface": "*",
     "tslib": "2.3.1",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
