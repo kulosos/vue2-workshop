@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <h1>Page Home.vue</h1>
-    <a href="#">This is a link</a>
+    Home / Note Content
   </div>
 </template>
 
@@ -22,10 +21,12 @@ export default class Home extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/colors';
+@import '../../src/styles/spaces';
+
 .home {
   display: flex;
   flex-direction: column;
+  padding: $spaceM;
 }
 </style>
 

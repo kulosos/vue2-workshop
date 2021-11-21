@@ -1,8 +1,6 @@
 <template>
   <div class="footer">
-    <span>Footer</span>
-      <i class="fas fa-moon"></i>
-      <i class="fas fa-sun"></i>
+    <span>Notes App &middot; Vue Workshop 2021 &middot; Oliver Kulas &middot; DB-Vertrieb P.DLV22(1)</span>
   </div>
 </template>
 
@@ -25,5 +23,8 @@ export default class Footer extends Vue {}
   border-top: 1px $bg_dark solid;
   display: flex;
   flex-direction: row;
+  font-size: smaller;
+  justify-content: center;
+  padding: 0 $spaceSM;
 }
 </style>

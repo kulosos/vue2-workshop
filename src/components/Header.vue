@@ -1,8 +1,10 @@
 <template>
   <div class="header">
-    <span>App Header</span>
+    <h2>Notes</h2>
+    <div>
       <i class="fas fa-moon"></i>
       <i class="fas fa-sun"></i>
+    </div>
   </div>
 </template>
 
@@ -16,8 +18,8 @@ export default class Header extends Vue {}
 </script>
 
 <style scoped lang="scss">
-@import '../../src/styles/spaces';
-@import '../../src/styles/colors';
+@import "../../src/styles/spaces";
+@import "../../src/styles/colors";
 
 .header {
   align-items: center;
@@ -25,5 +27,7 @@ export default class Header extends Vue {}
   color: $ws-white;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  padding: $spaceM;
 }
 </style>
