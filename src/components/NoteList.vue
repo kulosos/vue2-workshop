@@ -1,9 +1,23 @@
 <template>
-  <div class="note-list">
+  <div
+    class="note-list"
+    :class="[
+      {
+        'note-list--light': !$store.getters.isDarkMode,
+        'note-list--dark': $store.getters.isDarkMode,
+      },
+    ]"
+  >
     <button
       v-for="note in notes"
       :key="note.id"
       class="note-list__item"
+      :class="[
+        {
+          'note-list__item--light': !$store.getters.isDarkMode,
+          'note-list__item--dark': $store.getters.isDarkMode,
+        },
+      ]"
       type="button"
       @click="emitSelectedNote(note)"
     >
@@ -34,7 +48,7 @@ export default class NoteList extends Vue {
   }
 
   public emitSelectedNote(note: Note): void {
-    this.$emit('selected-note', note);
+    this.$emit("selected-note", note);
   }
 }
 </script>
@@ -45,25 +59,48 @@ export default class NoteList extends Vue {
 
 .note-list {
   /* border-right: 1px $bg_dark solid; */
-  background-color: $bg_lightgray;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   min-height: 100%;
 
+  &--light {
+    background-color: $bg_lightgray;
+  }
+
+  &--dark {
+    background-color: $bg_dark;
+  }
+
   &__item {
     align-items: center;
-    background-color: $ws-white;
     border: 0;
-    border-bottom: 1px $bg_dark solid;
     display: flex;
     padding: $spaceSM;
     text-align: left;
     transition: 0.15s background-color;
 
     &:hover {
-      background-color: $bg_lightgray;
       cursor: pointer;
+    }
+
+    &--light {
+      background-color: $ws-white;
+      border-bottom: 1px $bg_dark solid;
+
+      &:hover {
+        background-color: $bg_lightgray;
+      }
+    }
+
+    &--dark {
+      background-color: $ws-border-dark;
+      border-bottom: 1px $ws-bg-dark-seconday solid;
+      color: $ws-font-dark-secondary;
+
+      &:hover {
+        background-color: $ws-bg-dark-primary;
+      }
     }
 
     &:hover .note-list__item-icon,

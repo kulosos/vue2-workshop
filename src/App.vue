@@ -44,10 +44,6 @@ export default class App extends Vue {}
     height: $headerHeight;
   }
 
-  &__content {
-    /* height: calc(100vh - #{67px} - #{$footerHeight}); */
-  }
-
   &__main {
     display: flex;
     flex-direction: row;

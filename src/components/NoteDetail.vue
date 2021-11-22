@@ -1,5 +1,13 @@
 <template>
-  <div class="note-detail">
+  <div
+    class="note-detail"
+    :class="[
+      {
+        'note-detail--light': !$store.getters.isDarkMode,
+        'note-detail--dark': $store.getters.isDarkMode,
+      },
+    ]"
+  >
     <p>{{ note.id }}</p>
     <h2>{{ note.title }}</h2>
     <p>{{ note.content }}</p>
@@ -18,7 +26,6 @@ import { Component, Prop, Vue } from "vue-property-decorator";
   components: {},
 })
 export default class NoteDetail extends Vue {
-
   @Prop({ required: true, type: Object as PropType<Note> })
   public note!: Note;
 
@@ -33,10 +40,18 @@ export default class NoteDetail extends Vue {
 @import "../../src/styles/colors";
 
 .note-detail {
-  background-color: $ws-white;
   display: flex;
   flex-direction: column;
   padding: $spaceL;
   overflow: auto;
+
+  &--light {
+    background-color: $ws-white;
+  }
+
+  &--dark {
+    background-color: $ws-bg-dark-primary;
+    color: $ws-font-dark-secondary;
+  }
 }
 </style>

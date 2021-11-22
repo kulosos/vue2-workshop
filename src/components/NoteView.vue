@@ -2,6 +2,12 @@
   <div class="note">
     <NoteList
       class="note__list"
+      :class="[
+        {
+          'note__list--light': !$store.getters.isDarkMode,
+          'note__list--dark': $store.getters.isDarkMode,
+        },
+      ]"
       :notes="notes"
       @selected-note="setSelectedNote"
     ></NoteList>
@@ -68,11 +74,18 @@ export default class NoteView extends Vue {
   flex-direction: row;
 
   &__list {
-    border-right: 1px $bg_dark solid;
     display: flex;
     max-width: 350px;
     min-width: 200px;
     width: 20%;
+
+    &--light {
+      border-right: 1px $bg_dark solid;
+    }
+
+    &--dark {
+      border-right: 1px $ws-border-dark solid;
+    }
   }
 
   &__detail {

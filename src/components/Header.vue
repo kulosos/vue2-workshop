@@ -1,5 +1,13 @@
 <template>
-  <div class="header">
+  <div
+    class="header"
+    :class="[
+      {
+        'header--light': !$store.getters.isDarkMode,
+        'header--dark': $store.getters.isDarkMode,
+      },
+    ]"
+  >
     <h2>Notes</h2>
     <div class="header__controls">
       <button
@@ -34,6 +42,7 @@ export default class Header extends Vue {
 
   public toggleDarkMode(): void {
     this.isDarkMode = !this.isDarkMode;
+    this.$store.commit("toggleDarkMode");
   }
 }
 </script>
@@ -44,12 +53,20 @@ export default class Header extends Vue {
 
 .header {
   align-items: center;
-  background-color: $ws-blue-mid;
-  color: $ws-white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: $spaceM;
+
+  &--light {
+    background-color: $ws-blue-mid;
+    color: $ws-white;
+  }
+
+  &--dark {
+    background-color: $ws-bg-dark-quaternary;
+    color: $ws-font-dark-secondary;
+  }
 
   &__controls > button {
     background: none;
