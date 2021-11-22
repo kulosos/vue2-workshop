@@ -37,5 +37,6 @@ export default class NoteDetail extends Vue {
   display: flex;
   flex-direction: column;
   padding: $spaceL;
+  overflow: auto;
 }
 </style>
