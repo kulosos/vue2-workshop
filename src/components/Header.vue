@@ -10,23 +10,44 @@
   >
     <h2>Notes</h2>
     <div class="header__controls">
-      <button
-        v-if="$store.getters.isDarkMode"
-        type="button"
-        class="header__controls--dark-mode"
-        title="Toggle Dark Mode"
-        @click="toggleDarkMode"
-      >
-        <i class="fas fa-moon"></i>
-      </button>
-      <button
-        v-else
-        class="header__controls--dark-mode"
-        title="Toggle Light Mode"
-        @click="toggleDarkMode"
-      >
-        <i class="fas fa-sun"></i>
-      </button>
+      <div class="header__controls header__controls-layout">
+        <button
+          v-if="$store.getters.isListLayout"
+          type="button"
+          class="header__controls--dark-mode"
+          title="Toggle Grid Layout"
+          @click="toggleLayout"
+        >
+          <i class="fas fa-th-large"></i>
+        </button>
+        <button
+          v-else
+          class="header__controls--dark-mode"
+          title="Toggle List Layout"
+          @click="toggleLayout"
+        >
+          <i class="fas fa-list"></i>
+        </button>
+      </div>
+      <div class="header__controls header__controls-darkmode">
+        <button
+          v-if="$store.getters.isDarkMode"
+          type="button"
+          class="header__controls--dark-mode"
+          title="Toggle Dark Mode"
+          @click="toggleDarkMode"
+        >
+          <i class="fas fa-moon"></i>
+        </button>
+        <button
+          v-else
+          class="header__controls--dark-mode"
+          title="Toggle Light Mode"
+          @click="toggleDarkMode"
+        >
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -38,10 +59,14 @@ import { Component, Vue } from "vue-property-decorator";
   components: {},
 })
 export default class Header extends Vue {
-
   public toggleDarkMode(): void {
     // set vuex store value
     this.$store.commit("toggleDarkMode");
+  }
+
+  public toggleLayout(): void {
+    // set vuex store value
+    this.$store.commit("toggleLayout");
   }
 }
 </script>
@@ -65,6 +90,10 @@ export default class Header extends Vue {
   &--dark {
     background-color: $ws-bg-dark-quaternary;
     color: $ws-font-dark-secondary;
+  }
+
+  &__controls {
+    display: flex;
   }
 
   &__controls > button {

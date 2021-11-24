@@ -1,5 +1,5 @@
-import NoteView from "@/components/NoteView.vue";
 import { AppRouteNames } from "@/models/AppRouteNames";
+import Home from "@/pages/Home.vue";
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 
@@ -9,7 +9,7 @@ const routes: Array<RouteConfig> = [
     {
         path: '/',
         name: AppRouteNames.Home,
-        component: NoteView,
+        component: Home,
         redirect: {
             path: '/note'
         }
@@ -17,12 +17,12 @@ const routes: Array<RouteConfig> = [
     {
         path: '/note/',
         name: AppRouteNames.Note,
-        component: NoteView,
+        component: Home,
     },
     {
         path: '/note/:noteId',
         name: AppRouteNames.Note,
-        component: NoteView,
+        component: Home,
     },
 ]
 

@@ -1,17 +1,17 @@
 <template>
-  <div class="note">
+  <div class="note-list-layout">
     <NoteList
       class="note__list"
       :class="[
         {
-          'note__list--light': !$store.getters.isDarkMode,
-          'note__list--dark': $store.getters.isDarkMode,
+          'note-list-layout__list--light': !$store.getters.isDarkMode,
+          'note-list-layout__list--dark': $store.getters.isDarkMode,
         },
       ]"
       :notes="notes"
       @selected-note="setSelectedNote"
     ></NoteList>
-    <NoteDetail :note="selectedNote" class="note__detail"></NoteDetail>
+    <NoteDetail :note="selectedNote" class="note-list-layout__detail"></NoteDetail>
   </div>
 </template>
 
@@ -29,7 +29,7 @@ import NoteList from "./NoteList.vue";
     NoteDetail,
   },
 })
-export default class NoteView extends Vue {
+export default class NoteListLayout extends Vue {
   public notes: Note[] = [];
   public selectedNote: Note = {} as Note;
 
@@ -69,7 +69,7 @@ export default class NoteView extends Vue {
 @import "../../src/styles/spaces";
 @import "../../src/styles/colors";
 
-.note {
+.note-list-layout {
   display: flex;
   flex-direction: row;
   width: 100%;

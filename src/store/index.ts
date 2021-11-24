@@ -1,11 +1,9 @@
+import { AppLayout } from '@/models/AppLayout';
+import { State } from '@/models/State';
 import Vue from 'vue';
 import VueCookies from 'vue-cookies';
 import Vuex from 'vuex';
 import VuexPersistence from 'vuex-persist';
-
-export interface State {
-  darkMode: boolean;
-}
 
 Vue.use(Vuex);
 
@@ -22,10 +20,14 @@ const vuexLocal = new VuexPersistence<State>({
 export default new Vuex.Store<State>({
   state: {
     darkMode: false,
+    layout: AppLayout.List,
   },
   mutations: {
     toggleDarkMode(state) {
       state.darkMode = !state.darkMode;
+    },
+    toggleLayout(state) {
+      state.layout = state.layout === AppLayout.List ? AppLayout.Grid : AppLayout.List;
     }
   },
   actions: {
@@ -33,6 +35,9 @@ export default new Vuex.Store<State>({
   getters: {
     isDarkMode: state => {
       return state.darkMode;
+    },
+    isListLayout: state => {
+      return state.layout === AppLayout.List;
     }
   },
   modules: {
