@@ -1,9 +1,25 @@
 import Vue from 'vue';
+import VueCookies from 'vue-cookies';
 import Vuex from 'vuex';
+import VuexPersistence from 'vuex-persist';
 
-Vue.use(Vuex)
+export interface State {
+  darkMode: boolean;
+}
 
-export default new Vuex.Store({
+Vue.use(Vuex);
+
+// persit store using Cookies
+Vue.use(VueCookies);
+Vue.$cookies.config('7d');
+Vue.$cookies.set('darkMode', false);
+
+// persist state using localStorage
+const vuexLocal = new VuexPersistence<State>({
+  storage: window.localStorage,
+});
+
+export default new Vuex.Store<State>({
   state: {
     darkMode: false,
   },
@@ -20,5 +36,6 @@ export default new Vuex.Store({
     }
   },
   modules: {
-  }
+  },
+  plugins: [vuexLocal.plugin]
 })

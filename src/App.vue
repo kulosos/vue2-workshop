@@ -20,7 +20,11 @@ import Header from "./components/Header.vue";
     Footer,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  public mounted(): void {
+      console.log('darkMode Cookie: ', this.$cookies.get('darkMode'));
+  }
+}
 </script>
 
 <style scoped lang="scss">

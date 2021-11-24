@@ -11,7 +11,7 @@
     <h2>Notes</h2>
     <div class="header__controls">
       <button
-        v-if="isDarkMode"
+        v-if="$store.getters.isDarkMode"
         type="button"
         class="header__controls--dark-mode"
         title="Toggle Dark Mode"
@@ -38,10 +38,9 @@ import { Component, Vue } from "vue-property-decorator";
   components: {},
 })
 export default class Header extends Vue {
-  public isDarkMode = false;
 
   public toggleDarkMode(): void {
-    this.isDarkMode = !this.isDarkMode;
+    // set vuex store value
     this.$store.commit("toggleDarkMode");
   }
 }

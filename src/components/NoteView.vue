@@ -72,6 +72,7 @@ export default class NoteView extends Vue {
 .note {
   display: flex;
   flex-direction: row;
+  width: 100%;
 
   &__list {
     display: flex;
